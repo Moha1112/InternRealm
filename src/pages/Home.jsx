@@ -10,11 +10,6 @@ import { Input } from '@/components/ui/input';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
-function Homev2() {
-  return <>
-  </>;
-}
-
 export default function Home() {
   return (
     <div className="min-h-screen">
