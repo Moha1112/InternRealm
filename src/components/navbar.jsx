@@ -32,19 +32,18 @@ import {
   NavigationMenuTrigger
 } from "@/components/ui/navigation-menu";
 import {notificationAPI} from "@/api/notificationAPI.js";
-import {authAPI} from "@/api/authAPI.js";
+import { useLocation } from "react-router-dom"
 
 export function NavBar({ className, ...props }) {
   const { user, isLoading } = useAuth();
+  let location = useLocation();
   const navigate = useNavigate();
-  const [searchQuery, setSearchQuery] = useState("");
   const [notifications, setNotifications] = useState({});
+  const [hide, setHide] = useState(false);
 
-  const handleSearch = (e) => {
-    e.preventDefault();
-
-    console.log("searching for", searchQuery);
-  }
+  useEffect(() => {
+    setHide(location.pathname == "/")
+  }, [location]);
 
   const getUserInitials = () => {
     if (!user) return "?";
@@ -55,39 +54,8 @@ export function NavBar({ className, ...props }) {
   };
 
   let menu = [
-    { title: "Home", url: "#" },
-    { title: "Dashboard", url: "/dashboard" },
-    {
-      title: "Products",
-      url: "#",
-      items: [
-        {
-          title: "Blog",
-          description: "The latest industry news, updates, and info",
-          icon: <Book className="size-5 shrink-0" />,
-          url: "#",
-        },
-        {
-          title: "Company",
-          description: "Our mission is to innovate and empower the world",
-          icon: <Trees className="size-5 shrink-0" />,
-          url: "#",
-        },
-        {
-          title: "Careers",
-          description: "Browse job listing and discover our workspace",
-          icon: <Sunset className="size-5 shrink-0" />,
-          url: "#",
-        },
-        {
-          title: "Support",
-          description:
-            "Get in touch with our support team or visit our community forums",
-          icon: <Zap className="size-5 shrink-0" />,
-          url: "#",
-        },
-      ],
-    }
+    { title: "Home", url: "/" },
+    { title: "Dashboard", url: "/dashboard" }
     ];
 
   useEffect(() => {
@@ -95,13 +63,14 @@ export function NavBar({ className, ...props }) {
       try {
         const notData = await notificationAPI.getNotifications();
         setNotifications(notData);
-      } catch (err) {
+      } catch {
+        //
       }
     }
     init().then()
   }, []);
 
-  return (
+  return hide ? (<></>) : (
     <section className={cn(className, 'py-4')} {...props}>
       <div className="container mx-auto px-4">
         <nav className="hidden justify-between lg:flex">

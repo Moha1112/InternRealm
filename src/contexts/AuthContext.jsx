@@ -48,7 +48,7 @@ export function AuthProvider({ children }) {
 
       setUser(user);
       setToken(token);
-      navigate(user.role === 'admin' ? '/admin' : '/dashboard');
+      navigate('/dashboard');
     } catch (error) {
       setError(authAPI.isAuthError(error)
         ? 'Invalid email or password'
@@ -75,6 +75,10 @@ export function AuthProvider({ children }) {
         setUser(result.user);
         setToken(result.token);
         navigate('/dashboard');
+      } else {
+        // If registration does not return a token, we assume the user is created
+        // and we can redirect them to login or dashboard
+        navigate('/login');
       }
 
       return result;

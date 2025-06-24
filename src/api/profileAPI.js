@@ -19,12 +19,48 @@ export const profileAPI = {
    * Update the current profile
    */
   async setProfile(profile) {
-    const response = await apiClient.patch('/profile/', profile);
+    const response = await apiClient.post('/profile/update/', profile);
 
     if (!response.data.success) {
       throw new Error(response.data.message);
     }
 
     return response.data.profile;
+  },
+
+  async getCvs() {
+    const response = await apiClient.get("/profile/cvs/");
+    if (!response.data.success) {
+      throw new Error(response.data.error);
+    }
+
+    return response.data.cvs;
+  },
+
+  async createCv(cv) {
+    const response = await apiClient.post("/profile/cvs/create/", cv);
+    if (!response.data.success) {
+      throw new Error(response.data.error);
+    }
+
+    return response.data;
+  },
+
+  async getCv(id) {
+    const response = await apiClient.get('/profile/cvs/'+ id + '/');
+    if (!response.data.success) {
+      throw new Error(response.data.error);
+    }
+
+    return response.data.cv;
+  },
+
+  async deleteCv(id) {
+    const response = await apiClient.delete('/profile/cvs/'+ id + '/');
+    if (!response.data.success) {
+      throw new Error(response.data.error);
+    }
+
+    return response.data;
   }
 }
