@@ -19,7 +19,7 @@ Il a été développé avec **React.js** et utilise **Vite** comme bundler pour 
 
 1. Cloner le dépôt frontend :
 ```bash
-   git clone https://<ton-url-git>/internRealm-frontend.git
+   git clone https://github.com/MohaIfk/InternRealm.git
 ````
 
 2. Installer les dépendances :
