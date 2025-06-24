@@ -1,12 +1,85 @@
-# React + Vite
+# InternRealm - Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Description
 
-Currently, two official plugins are available:
+Ce projet correspond à la partie frontend de la plateforme web **InternRealm**, dédiée à la gestion complète du cycle de stage.  
+Il a été développé avec **React.js** et utilise **Vite** comme bundler pour un rendu rapide et optimisé.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## Technologies utilisées
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **React.js** : bibliothèque JavaScript pour construire l’interface utilisateur.
+- **Vite** : outil de build rapide pour les projets frontend modernes.
+- **Tailwind CSS** (si utilisé) : framework CSS utilitaire pour un style rapide et responsive.
+
+---
+
+## Installation
+
+1. Cloner le dépôt frontend :
+```bash
+   git clone https://<ton-url-git>/internRealm-frontend.git
+````
+
+2. Installer les dépendances :
+
+```bash
+   cd internRealm-frontend
+   npm install
+```
+
+3. Démarrer le serveur de développement :
+
+```bash
+   npm run dev
+```
+
+4. Ouvrir le navigateur sur :
+
+```
+   http://localhost:5173
+```
+
+---
+
+## Scripts utiles
+
+| Commande          | Description                                         |
+| ----------------- | --------------------------------------------------- |
+| `npm run dev`     | Démarre le serveur de développement avec hot reload |
+| `npm run build`   | Compile le projet pour la production                |
+| `npm run preview` | Prévisualise la build de production locale          |
+
+---
+
+## Configuration
+
+* L’URL de l’API backend est configurable dans le fichier `.env` ou dans le fichier de configuration spécifique (`src/config.js` ou équivalent).
+* Veillez à ce que le backend Django soit démarré et accessible pour que le frontend fonctionne correctement.
+
+---
+
+## Structure du projet
+
+* `src/` : code source React (composants, pages, services)
+* `public/` : fichiers statiques (images, favicon)
+* `vite.config.js` : configuration Vite
+
+---
+
+## Contribution
+
+Pour contribuer, veuillez créer une branche à partir de `main`, effectuer vos modifications puis ouvrir une Pull Request.
+
+---
+
+## Licence
+
+Ce projet est sous licence MIT.
+
+---
+
+## Contact
+
+Pour toute question, merci de contacter **\[Mohammed ifkirne]** à l’adresse email : \[[mohammedifkirne569@gmail.com](mailto:mohammedifkirne569@gmail.com)]
