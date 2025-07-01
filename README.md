@@ -82,4 +82,4 @@ Ce projet est sous licence MIT.
 
 ## Contact
 
-Pour toute question, merci de contacter **\[Mohammed ifkirne]** à l’adresse email : \[[mohammedifkirne569@gmail.com](mailto:mohammedifkirne569@gmail.com)]
+Pour toute question, merci de contacter **\[Mohammed Benzahouane]** à l’adresse email : \[[mohammed.benzahouane@uit.ac.ma](mohammed.benzahouane@uit.ac.ma)]
